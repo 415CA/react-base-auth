@@ -15,37 +15,104 @@ const Navigation = () => (
   </AuthUserContext.Consumer>
 );
 
-const NavigationAuth = ({ authUser }) => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-    {!!authUser.roles[ROLES.ADMIN] && (
-      <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
-      </li>
-    )}
-    <li>
-      <SignOutButton />
-    </li>
-  </ul>
-);
+const NavigationAuth = ({ authUser }) => {
+  return (
+    <nav className="db dt-l w-100 border-box pa3 ph5-l">
+      <a
+        className="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l"
+        title="Home"
+        href={ROUTES.LANDING}
+      >
+        <img
+          src="http://tachyons.io/img/logo.jpg"
+          className="dib w2 h2 br-100"
+          alt="Chris Allen"
+        />
+      </a>
+      <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.HOME}
+        >
+          Home
+        </Link>
 
-const NavigationNonAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
-);
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.LANDING}
+        >
+          Landing
+        </Link>
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.ACCOUNT}
+        >
+          Account
+        </Link>
+        {!!authUser.roles[ROLES.ADMIN] && (
+          <Link
+            className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+            to={ROUTES.ADMIN}
+          >
+            Admin
+          </Link>
+        )}
+        <SignOutButton />
+      </div>
+    </nav>
+  );
+};
+
+const NavigationNonAuth = () => {
+  return (
+    <header class="bg-white-70 dt--fixed w-100 ph5-l">
+    <nav className="db dt-l w-100 border-box pa3 ph5-l">
+      <a
+        className="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l"
+        title="Home"
+        href={ROUTES.LANDING}
+      >
+        <img
+          src="http://tachyons.io/img/logo.jpg"
+          className="dib w2 h2 br-100"
+          alt="Chris Allen"
+        />
+      </a>
+      <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.LANDING}
+        >
+          Home
+        </Link>
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.FILM}
+        >
+          Web
+        </Link>
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.FILM}
+        >
+          Film
+        </Link>
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.RESUME}
+        >
+          Resume
+        </Link>
+        <Link
+          className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
+          to={ROUTES.CONTACT}
+        >
+          Contact
+        </Link>
+      </div>
+    </nav>
+    </header>
+  );
+};
 
 export default Navigation;
