@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactPlayer from 'react-player'
 
 const Videos = () => {
   return (
-    <div>
+    <Fragment>
       <ReactPlayer url='https://vimeo.com/389025248' />
-    </div>
+    </Fragment>
   )
 }
 

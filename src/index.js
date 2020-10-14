@@ -10,7 +10,7 @@ import Firebase, {
 } from '../src/Components/Authentication/Firebase';
 
 import { IconContext } from 'react-icons';
-
+import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(
   <FirebaseContext.Provider value={new Firebase()}>

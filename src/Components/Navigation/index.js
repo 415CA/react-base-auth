@@ -65,7 +65,7 @@ const NavigationAuth = ({ authUser }) => {
 
 const NavigationNonAuth = () => {
   return (
-    <header class="bg-white-70 dt--fixed w-100 ph5-l">
+    <header className="bg-white-70 dt--fixed w-100 ph5-l">
     <nav className="db dt-l w-100 border-box pa3 ph5-l">
       <a
         className="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l"

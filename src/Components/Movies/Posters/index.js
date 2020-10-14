@@ -1,23 +1,18 @@
 import React, {Fragment} from 'react'
-import { Posters } from '../../../Images/'
+import { Films } from '../../../Media'
+import VideoModal from '../Modal/index'
 
-const PosterWall = () => {
+const Posters = () => {
+
   return (
     <Fragment>
-      <article>
-        {
-          Posters.map( poster => {
-            return (
-            <a href="/" className="fl w-50 w-25-l link overflow-hidden">
-              <div role="img" aria-label="Primer movie" className="grow aspect-ratio--4x6 " style={{backgroundImage: `url(${poster})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}></div>
-            </a>
-            )
-          })
-        }
-    </article>
-
+      { Films.map( film => { 
+        return (
+          <VideoModal key={film.name} poster={film.poster} video={film.video} backdrop={film.backdrop} />
+        )
+      })}
     </Fragment>
   )
 }
 
-export default PosterWall
+export default Posters
