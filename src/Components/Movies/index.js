@@ -1,4 +1,4 @@
-import Posters from './Posters'
-import Videos from './Videos'
+import Posters from './Posters';
+import Videos from './Videos';
 
-export { Posters, Videos }
+export { Posters, Videos };

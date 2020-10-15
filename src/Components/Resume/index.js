@@ -1,18 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Education from './Education';
 import ProExperience from './ProExperience';
-import ResumeHeader from './ResumeHeader'
-import Education from './Education'
-import Technical from './Technical'
+import ResumeHeader from './ResumeHeader';
+import Technical from './Technical';
 
-const Resume = () => {
-  return (
-    <Fragment>
-      <ResumeHeader />
-      <Technical />
-      <ProExperience />
-      <Education />
-    </Fragment>
-  );
-};
+const Resume = () => (
+  <>
+    <ResumeHeader />
+    <Technical />
+    <ProExperience />
+    <Education />
+  </>
+);
 
 export default Resume;

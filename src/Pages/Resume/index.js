@@ -1,12 +1,10 @@
-import React, { Fragment } from 'react'
-import Resume from '../../Components/Resume'
+import React from 'react';
+import Resume from '../../Components/Resume';
 
-const ResumePage = () => {
-  return (
-    <Fragment>
-      <Resume/>
-    </Fragment>
-  )
-}
+const ResumePage = () => (
+  <>
+    <Resume />
+  </>
+);
 
-export default ResumePage
+export default ResumePage;

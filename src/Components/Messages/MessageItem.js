@@ -35,13 +35,15 @@ class MessageItem extends Component {
       <li>
         {editMode ? (
           <input
-            type="text"
+            type='text'
             value={editText}
             onChange={this.onChangeEditText}
           />
         ) : (
           <span>
-            <strong>{message.userId}</strong> {message.text}
+            <strong>{message.userId}</strong>
+            {' '}
+            {message.text}
             {message.editedAt && <span>(Edited)</span>}
           </span>
         )}
@@ -59,7 +61,7 @@ class MessageItem extends Component {
 
             {!editMode && (
               <button
-                type="button"
+                type='button'
                 onClick={() => onRemoveMessage(message.uid)}
               >
                 Delete

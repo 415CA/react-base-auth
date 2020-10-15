@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-
+import { withFirebase } from '../Firebase';
+import PasswordChangeForm from '../PasswordChange';
+import { PasswordForgetForm } from '../PasswordForget';
 import {
   AuthUserContext,
   withAuthorization,
-  withEmailVerification,
+  withEmailVerification
 } from '../Session';
-import { withFirebase } from '../Firebase';
-import { PasswordForgetForm } from '../PasswordForget';
-import PasswordChangeForm from '../PasswordChange';
+
 
 const SIGN_IN_METHODS = [
   {
@@ -33,7 +33,11 @@ const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
       <div>
-        <h1>Account: {authUser.email}</h1>
+        <h1>
+          Account:
+          {' '}
+          {authUser.email}
+        </h1>
         <PasswordForgetForm />
         <PasswordChangeForm />
         <LoginManagement authUser={authUser} />
@@ -59,9 +63,7 @@ class LoginManagementBase extends Component {
   fetchSignInMethods = () => {
     this.props.firebase.auth
       .fetchSignInMethodsForEmail(this.props.authUser.email)
-      .then((activeSignInMethods) =>
-        this.setState({ activeSignInMethods, error: null })
-      )
+      .then((activeSignInMethods) => this.setState({ activeSignInMethods, error: null }))
       .catch((error) => this.setState({ error }));
   };
 
@@ -75,7 +77,7 @@ class LoginManagementBase extends Component {
   onDefaultLoginLink = (password) => {
     const credential = this.props.firebase.emailAuthProvider.credential(
       this.props.authUser.email,
-      password
+      password,
     );
 
     this.props.firebase.auth.currentUser
@@ -137,20 +139,23 @@ const SocialLoginToggle = ({
   signInMethod,
   onLink,
   onUnlink,
-}) =>
-  isEnabled ? (
-    <button
-      type="button"
-      onClick={() => onUnlink(signInMethod.id)}
-      disabled={onlyOneLeft}
-    >
-      Deactivate {signInMethod.id}
-    </button>
-  ) : (
-    <button type="button" onClick={() => onLink(signInMethod.provider)}>
-      Link {signInMethod.id}
-    </button>
-  );
+}) => (isEnabled ? (
+  <button
+    type='button'
+    onClick={() => onUnlink(signInMethod.id)}
+    disabled={onlyOneLeft}
+  >
+    Deactivate
+    {' '}
+    {signInMethod.id}
+  </button>
+) : (
+  <button type='button' onClick={() => onLink(signInMethod.provider)}>
+    Link
+    {' '}
+    {signInMethod.id}
+  </button>
+));
 
 class DefaultLoginToggle extends Component {
   constructor(props) {
@@ -171,7 +176,9 @@ class DefaultLoginToggle extends Component {
   };
 
   render() {
-    const { onlyOneLeft, isEnabled, signInMethod, onUnlink } = this.props;
+    const {
+      onlyOneLeft, isEnabled, signInMethod, onUnlink,
+    } = this.props;
 
     const { passwordOne, passwordTwo } = this.state;
 
@@ -179,31 +186,35 @@ class DefaultLoginToggle extends Component {
 
     return isEnabled ? (
       <button
-        type="button"
+        type='button'
         onClick={() => onUnlink(signInMethod.id)}
         disabled={onlyOneLeft}
       >
-        Deactivate {signInMethod.id}
+        Deactivate
+        {' '}
+        {signInMethod.id}
       </button>
     ) : (
       <form onSubmit={this.onSubmit}>
         <input
-          name="passwordOne"
+          name='passwordOne'
           value={passwordOne}
           onChange={this.onChange}
-          type="password"
-          placeholder="New Password"
+          type='password'
+          placeholder='New Password'
         />
         <input
-          name="passwordTwo"
+          name='passwordTwo'
           value={passwordTwo}
           onChange={this.onChange}
-          type="password"
-          placeholder="Confirm New Password"
+          type='password'
+          placeholder='Confirm New Password'
         />
 
-        <button disabled={isInvalid} type="submit">
-          Link {signInMethod.id}
+        <button disabled={isInvalid} type='submit'>
+          Link
+          {' '}
+          {signInMethod.id}
         </button>
       </form>
     );
@@ -216,5 +227,5 @@ const condition = (authUser) => !!authUser;
 
 export default compose(
   withEmailVerification,
-  withAuthorization(condition)
+  withAuthorization(condition),
 )(AccountPage);

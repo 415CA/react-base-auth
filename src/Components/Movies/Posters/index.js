@@ -1,18 +1,18 @@
-import React, {Fragment} from 'react'
-import { Films } from '../../../Media'
-import VideoModal from '../Modal/index'
+import React from 'react';
+import Films from '../../../Media';
+import VideoModal from '../Modal/index';
 
-const Posters = () => {
+const Posters = () => (
+  <>
+    { Films.map((film) => (
+      <VideoModal
+        key={film.name}
+        poster={film.poster}
+        video={film.video}
+        backdrop={film.backdrop}
+      />
+    ))}
+  </>
+);
 
-  return (
-    <Fragment>
-      { Films.map( film => { 
-        return (
-          <VideoModal key={film.name} poster={film.poster} video={film.video} backdrop={film.backdrop} />
-        )
-      })}
-    </Fragment>
-  )
-}
-
-export default Posters
+export default Posters;

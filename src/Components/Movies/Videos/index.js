@@ -1,12 +1,10 @@
-import React, { Fragment } from 'react'
-import ReactPlayer from 'react-player'
+import React from 'react';
+import ReactPlayer from 'react-player';
 
-const Videos = () => {
-  return (
-    <Fragment>
-      <ReactPlayer url='https://vimeo.com/389025248' />
-    </Fragment>
-  )
-}
+const Videos = () => (
+  <>
+    <ReactPlayer url='https://vimeo.com/389025248' />
+  </>
+);
 
-export default Videos
+export default Videos;

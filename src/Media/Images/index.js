@@ -1,4 +1,4 @@
-import {Backdrops} from './Backdrops'
-import {Posters} from './Posters'
+import Backdrops from './Backdrops';
+import Posters from './Posters';
 
-export {Backdrops, Posters}
+export { Backdrops, Posters };

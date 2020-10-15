@@ -1,12 +1,10 @@
-import React, { Fragment } from 'react'
-import Hero from '../../Components/Hero'
+import React from 'react';
+import Hero from '../../Components/Hero';
 
-const Landing = () => {
-  return (
-    <Fragment>
-      <Hero />
-    </Fragment>
-  )
-}
+const Landing = () => (
+  <>
+    <Hero />
+  </>
+);
 
-export default Landing
+export default Landing;

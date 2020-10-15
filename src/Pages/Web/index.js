@@ -1,13 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react';
 
-const Web = () => {
-  return (
-    <Fragment>
-      <div>
-        Web
-      </div>
-    </Fragment>
-  )
-}
+const Web = () => (
+  <>
+    <div>Web</div>
+  </>
+);
 
-export default Web
+export default Web;

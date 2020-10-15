@@ -1,26 +1,23 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   APD,
   Edge,
-  Universal,
-  Supergravity,
-  Soundscapes,
-  JMTalent,
-  TWC,
+
+  JMTalent, Soundscapes, Supergravity,
+
+  TWC, Universal,
 } from './Experience';
 
-const ProExperience = () => {
-  return (
-    <Fragment>
-      <APD />
-      <Edge />
-      <Universal />
-      <Supergravity />
-      <Soundscapes />
-      <JMTalent />
-      <TWC />
-    </Fragment>
-  );
-};
+const ProExperience = () => (
+  <>
+    <APD />
+    <Edge />
+    <Universal />
+    <Supergravity />
+    <Soundscapes />
+    <JMTalent />
+    <TWC />
+  </>
+);
 
 export default ProExperience;

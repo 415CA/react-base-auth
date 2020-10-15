@@ -1,6 +1,5 @@
 import React from 'react';
 import { compose } from 'recompose';
-
 import { withAuthorization, withEmailVerification } from '../../Components/Authentication/Session';
 import Messages from '../../Components/Messages';
 
@@ -17,5 +16,5 @@ const condition = (authUser) => !!authUser;
 
 export default compose(
   withEmailVerification,
-  withAuthorization(condition)
+  withAuthorization(condition),
 )(HomePage);
