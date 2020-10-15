@@ -7,6 +7,8 @@ import SignOutButton from '../Authentication/SignOut';
 import * as ROUTES from '../../Constants/routes';
 import * as ROLES from '../../Constants/roles';
 
+import Logo from '../../Assets/Images/Logo.png'
+
 const Navigation = () => (
   <AuthUserContext.Consumer>
     {(authUser) =>
@@ -73,8 +75,8 @@ const NavigationNonAuth = () => {
         href={ROUTES.LANDING}
       >
         <img
-          src="http://tachyons.io/img/logo.jpg"
-          className="dib w2 h2 br-100"
+          src={Logo}
+          className="h3 w3 dib"
           alt="Chris Allen"
         />
       </a>
@@ -87,7 +89,7 @@ const NavigationNonAuth = () => {
         </Link>
         <Link
           className="link dim dark-gray f6 f5-l dib mr3 mr4-l"
-          to={ROUTES.FILM}
+          to={ROUTES.WEB}
         >
           Web
         </Link>

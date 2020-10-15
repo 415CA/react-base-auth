@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 
-const Experience = () => {
+const Web = () => {
   return (
     <Fragment>
       <div>
-        Experience
+        Web
       </div>
     </Fragment>
   )
 }
 
-export default Experience
+export default Web

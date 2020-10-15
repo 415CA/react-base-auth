@@ -16,7 +16,7 @@ import AdminPage from '../Authentication/Admin';
 import NoMatchPage from '../../Pages/NoMatch'
 import ContactPage from '../../Pages/Contact'
 import AboutPage from '../../Pages/About'
-import ExperiencePage from '../../Pages/Experience'
+import WebPage from '../../Pages/Web'
 import WorkPage from '../../Pages/Work'
 import ResumePage from '../../Pages/Resume'
 import DemoReel from '../../Pages/DemoReel'
@@ -52,7 +52,7 @@ const App = () => {
           <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
           <Route exact path={ROUTES.ADMIN} component={AdminPage} />
           <Route exact path={ROUTES.ABOUT} component={AboutPage} />
-          <Route exact path={ROUTES.EXPERIENCE} component={ExperiencePage} />
+          <Route exact path={ROUTES.WEB} component={WebPage} />
           <Route exact path={ROUTES.WORK} component={WorkPage} />
           <Route exact path={ROUTES.CONTACT} component={ContactPage} />
           <Route exact path={ROUTES.RESUME} component={ResumePage} />

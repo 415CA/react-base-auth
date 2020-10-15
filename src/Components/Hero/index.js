@@ -1,22 +1,25 @@
 import React from 'react'
 import Social from '../Social'
 const Hero = () => {
-  const image = 'https://lh3.googleusercontent.com/F9g9yw3GqD9C0agc0wpLOGZinv7j0ejGUz2gR9fkQ3LSCIEt8jZxLyOoVx7t8NG1jZnNlE6frvquieVY0tkt4g_kcNo5urwKPfWlsEEbRbrn0xDAxQbOtCl19lcg3tTUGhDG4c5BkUZU1k4ugrWPL3JMR5XdR-7rkgbVBxF-6LVvJxdG9U8gAPiHxdBBryDeY0HXdEm5_9oYlYnKnFx_xCadD-576qhbtvC2JpT2ulfrnM3YXQFbBA7bvJrDqLYlJxdEuxA_DGD060enTzYOhGJH82fbQKTw1Rr903Lb3kieh9-PgxlNPCWTzuZSkMqAz85fK6qd9baLrs4EeCpndPPhDBCaiBxf96CNkM79kIz9hyEdbyF5cR9w8BgVACDERg8VWUZ9OAceW5zXMhm2Tmj-gmYmXUCV2FL40PBTOqivuajUAMqdLgwpTcHe1EJ2z3RA348zqXEZVd8sXpMraXnr7bzHyMTe-MjDIyCx0qw6GDzZ0tXoJPF0P73s5CyxeExSFGU1fefBCQr5KcCDwHziblQJY13EENu4TyGenMXTcq6xIp5OKEPD9WuVZHl6ujDd6cF5bxSi2w1Wy5VSLZF-aaBJRT67LYGvXsuy6LOaPKS0REZXRSF40BzhH1dR51HdY-v8ESHRMsuL6wvaM8NF6pqAQJ4xynNs7nZNorSeAFw7j3L-VlETG1yuNh8=w2838-h1596-no?authuser=0'
-  
+  const image = 'https://lh3.googleusercontent.com/-Ky5C-oWxo9vp_gLRtTyq657vLSaeWt-TC-CxTocR6b9pL3DZdTyB-nW0lFJETSv12om8DnI7IyxBOT1rJTzzi0kPZYD9M2Kk8kBZUduZUJrt8icmBW-eP2I_0UmF8yOrrZm80AobgDe0WapcMW9tpcUVI9wldCMnjW85pe-oea-qFyowSJNYK5h7bZAP9VbAkMsyU07rH0CbH7E_rzFvO7EZGA3_jDdaTFVRFT7CUD9eTuGyp6KsYag1-Or2LsGyN3a8Sqh7G2WICJtYVSmvgZj01M2s_ehM6MfXSXq4mLAUePgIsDrPc-NgY77Fb5bt1HMwJKJCVVlPhjgxJHPyMtVyx8X0LHJ9d2ENgQG9RZrHTrzanJAB421Uw7TeTYgSZgRNoXm9CDFtQpRdk69Ky46u3IklpmON2DUzjh8Fi3Nvqk0fUOw4VHrIYyavYijsvL_lIoQO0emfsKAT6fSTz5Co_Zxz2lAW8afw_G2_8YrkVOZZBj3T7yRBRf35J91cET6kqE_OQ-4kyJKm_REE83UO36ap6K3rwG14cCmhX9a9WQ4xX8CCSsn8sh1dMLGIlCyqklQG-tjUX87sKqanWRxPjJFLWzlBMSoio_U9sbUAcC80CPsGQ8bN4eBiioU8qBx3WOHo62XnmIujFdB2SRCaNfJDN9q3PUipXQnB6ZVi-o2kUfMsEnsqLKnOv8=w2838-h1596-no?authuser=0'
+
   return (
-    <article class="athelas">
-      <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style={{backgroundImage: `url(${image})`, alignItems: 'center'}}>
-        <div class="dtc v-mid">
-          <header class="white-100">
-            <h2 class="f6 fw1 ttu tracked mb2 lh-title">Issue Six</h2>
-            <h3 class="f6 fw1 lh-title">Summer MMXVI</h3>
-            <h1 class="f1 f-headline-l fw1 i white-100">Chris Allen</h1>
-            <Social />
-          </header>
-          <h1 class="f1 f-headline-l fw1 i white-100">Chris Allen</h1>
+    <div class="athelas">
+      <div class="vh-100 dt w-100 tc bg-white cover" style={{background:`url(${image})`, backgroundRepeat: "no-repeat", backgroundPosition: "center"}}>
+        <div class="dtc v-mid bg-black-30 ">
+          <h1 class="f1 f-headline-l fw1 white">Chris Allen</h1>
+          <blockquote class="ph0 mh0 measure f4 lh-copy center">
+            <h1 class="f2 fw1 white">
+              Full Stack Web Developer
+            </h1>
+            <h4 class=" f4 fw1 white">
+              Entertainment Marketing | Media Licensing | Business Development
+            </h4>
+            <h4 class="f3 ttu tracked fs-normal"><Social /></h4>
+          </blockquote>
         </div>
       </div>
-    </article>
+    </div>
   )
 }
 

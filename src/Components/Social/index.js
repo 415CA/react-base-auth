@@ -5,8 +5,6 @@ import { FaVimeoV } from 'react-icons/fa'
 const Social = () => {
   return (
     <Fragment>
-      {/* <div className="pv4 ph3 ph5-ns tc"> */}
-      <div>
         <a href='https://github.com/415CA'>
           <AiFillGithub />
         </a>
@@ -28,7 +26,6 @@ const Social = () => {
         <a href='mailto:chrisallen415@gmail.com'>
           <AiOutlineMail />
         </a>
-      </div>
     </Fragment>
   )
 }
