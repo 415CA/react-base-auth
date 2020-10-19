@@ -83,13 +83,13 @@ const NavigationNonAuth = () => (
           className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
           to={ROUTES.WEB}
         >
-          Web
+          Projects
         </Link>
         <Link
           className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
           to={ROUTES.FILM}
         >
-          Film
+          Trailers
         </Link>
         <Link
           className='link dim dark-gray f6 f5-l dib mr3 mr4-l'

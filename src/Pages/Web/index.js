@@ -1,8 +1,9 @@
 import React from 'react';
+import { Projects } from '../../Components/List/index';
 
 const Web = () => (
   <>
-    <div>Web</div>
+    <Projects />
   </>
 );
 
