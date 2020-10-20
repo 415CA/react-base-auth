@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
-import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../../Constants/routes';
 import * as ROLES from '../../../Constants/roles';
+import * as ROUTES from '../../../Constants/routes';
+import { withFirebase } from '../Firebase';
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+  <main className='pa4 black-80 measure center'>
+    <legend className='f4 fw6 ph0 mh0'>Sign Up</legend>
     <SignUpForm />
-  </div>
+  </main>
 );
 
 const INITIAL_STATE = {
@@ -40,7 +39,9 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = (event) => {
-    const { username, email, passwordOne, isAdmin } = this.state;
+    const {
+      username, email, passwordOne, isAdmin,
+    } = this.state;
     const roles = {};
 
     if (isAdmin) {
@@ -49,17 +50,14 @@ class SignUpFormBase extends Component {
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then((authUser) => {
+      .then((authUser) =>
         // Create a user in your Firebase realtime database
-        return this.props.firebase.user(authUser.user.uid).set({
+        this.props.firebase.user(authUser.user.uid).set({
           username,
           email,
           roles,
-        });
-      })
-      .then(() => {
-        return this.props.firebase.doSendEmailVerification();
-      })
+        }))
+      .then(() => this.props.firebase.doSendEmailVerification())
       .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
@@ -93,56 +91,73 @@ class SignUpFormBase extends Component {
       error,
     } = this.state;
 
-    const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      username === '';
+    const isInvalid = passwordOne !== passwordTwo
+      || passwordOne === ''
+      || email === ''
+      || username === '';
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <label>
-          Admin:
-          <input
-            name="isAdmin"
-            type="checkbox"
-            checked={isAdmin}
-            onChange={this.onChangeCheckbox}
-          />
-        </label>
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+        <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
+          <div className='mt3'>
+            <input
+              name='username'
+              value={username}
+              onChange={this.onChange}
+              type='text'
+              placeholder='Full Name'
+              className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
+            />
+          </div>
+          <div className='mt3'>
+            <input
+              name='email'
+              value={email}
+              onChange={this.onChange}
+              type='text'
+              placeholder='Email Address'
+              className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
+            />
+          </div>
+          <div className='mt3'>
+            <input
+              name='passwordOne'
+              value={passwordOne}
+              onChange={this.onChange}
+              type='password'
+              placeholder='Password'
+              className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
+            />
+          </div>
+          <div className='mt3'>
+            <input
+              name='passwordTwo'
+              value={passwordTwo}
+              onChange={this.onChange}
+              type='password'
+              placeholder='Confirm Password'
+              className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
+            />
+          </div>
+          <div className='mt3'>
+            <label className='db fw6 lh-copy f6'>
+              Admin:
+              <input
+                name='isAdmin'
+                type='checkbox'
+                checked={isAdmin}
+                onChange={this.onChangeCheckbox}
+              />
+            </label>
+          </div>
+          <div className='lh-copy mt3'>
+            <button disabled={isInvalid} type='submit'>
+              Sign Up
+            </button>
+          </div>
 
-        {error && <p>{error.message}</p>}
+          {error && <p>{error.message}</p>}
+        </fieldset>
       </form>
     );
   }
@@ -150,7 +165,9 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account?
+    {' '}
+    <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
 

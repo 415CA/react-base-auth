@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
-import { SignUpLink } from '../SignUp';
-import { PasswordForgetLink } from '../PasswordForget';
-import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../../Constants/routes';
+import { withFirebase } from '../Firebase';
+import { PasswordForgetLink } from '../PasswordForget';
+import { SignUpLink } from '../SignUp';
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
+  <main className='pa4 black-80 measure center'>
+    <legend className='f4 fw6 ph0 mh0'>Sign In</legend>
+    <div className='mt3'>
+      <SignInForm />
+    </div>
+    <br/>
     <SignInGoogle />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
+    <div className='lh-copy mt3'>
+      <PasswordForgetLink />
+      <SignUpLink />
+    </div>
+  </main>
 );
 
 const INITIAL_STATE = {
@@ -23,8 +27,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
-const ERROR_CODE_ACCOUNT_EXISTS =
-  'auth/account-exists-with-different-credential';
+const ERROR_CODE_ACCOUNT_EXISTS = 'auth/account-exists-with-different-credential';
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
   An account with an E-Mail address to
@@ -68,23 +71,27 @@ class SignInFormBase extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
-          name="email"
+          name='email'
           value={email}
           onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
+          type='text'
+          placeholder='Email Address'
+          className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
         />
         <input
-          name="password"
+          name='password'
           value={password}
           onChange={this.onChange}
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
+          className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100'
         />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
+        <br/>
+        <div className=''>
+          <button disabled={isInvalid} type='submit' class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100">
+            Sign In
+          </button>
+        </div>
         {error && <p>{error.message}</p>}
       </form>
     );
@@ -101,14 +108,13 @@ class SignInGoogleBase extends Component {
   onSubmit = (event) => {
     this.props.firebase
       .doSignInWithGoogle()
-      .then((socialAuthUser) => {
+      .then((socialAuthUser) =>
         // Create a user in your Firebase Realtime Database too
-        return this.props.firebase.user(socialAuthUser.user.uid).set({
+        this.props.firebase.user(socialAuthUser.user.uid).set({
           username: socialAuthUser.user.displayName,
           email: socialAuthUser.user.email,
           roles: {},
-        });
-      })
+        }))
       .then(() => {
         this.setState({ error: null });
         this.props.history.push(ROUTES.HOME);
@@ -129,7 +135,7 @@ class SignInGoogleBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Google</button>
+        <button type='submit' className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100">Sign In with Google</button>
 
         {error && <p>{error.message}</p>}
       </form>
