@@ -45,7 +45,7 @@ const Projects = () => (
       </a>
     </article>
     <article className='bb b--black-10'>
-      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://github.com/415CA/read-frontend'>
+      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://read-js-app.herokuapp.com/'>
         <div className='flex flex-column flex-row-ns'>
           <div className='pr3-ns mb4 mb0-ns w-100 w-40-ns'>
             <img src='https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2053&q=80' className='db' alt='library' />
