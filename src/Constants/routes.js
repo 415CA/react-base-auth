@@ -13,4 +13,4 @@ export const CONTACT = '/contact';
 export const RESUME = '/resume';
 export const PORTFOLIO = '/portfolio';
 export const FILM = '/film';
-export const WEB = '/web';
+export const PROJECTS = '/projects';

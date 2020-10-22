@@ -81,7 +81,7 @@ const NavigationNonAuth = () => (
         </Link>
         <Link
           className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
-          to={ROUTES.WEB}
+          to={ROUTES.PROJECTS}
         >
           Projects
         </Link>

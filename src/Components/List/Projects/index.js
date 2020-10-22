@@ -66,7 +66,7 @@ const Projects = () => (
       </a>
     </article>
     <article className='bb b--black-10'>
-      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://github.com/415CA/session'>
+      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://session-nyc.herokuapp.com/'>
         <div className='flex flex-column flex-row-ns'>
           <div className='pr3-ns mb4 mb0-ns w-100 w-40-ns'>
             <img src='https://images.unsplash.com/photo-1536318431364-5cc762cfc8ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' className='db' alt='skateboard' />

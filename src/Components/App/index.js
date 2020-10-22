@@ -12,7 +12,7 @@ import HomePage from '../../Pages/Home';
 import LandingPage from '../../Pages/Landing';
 import NoMatchPage from '../../Pages/NoMatch';
 import ResumePage from '../../Pages/Resume';
-import WebPage from '../../Pages/Web';
+import ProjectsPage from '../../Pages/Projects';
 import WorkPage from '../../Pages/Work';
 import AccountPage from '../Authentication/Account';
 import AdminPage from '../Authentication/Admin';
@@ -46,7 +46,7 @@ const App = () => (
         <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route exact path={ROUTES.ADMIN} component={AdminPage} />
         <Route exact path={ROUTES.ABOUT} component={AboutPage} />
-        <Route exact path={ROUTES.WEB} component={WebPage} />
+        <Route exact path={ROUTES.PROJECTS} component={ProjectsPage} />
         <Route exact path={ROUTES.WORK} component={WorkPage} />
         <Route exact path={ROUTES.CONTACT} component={ContactPage} />
         <Route exact path={ROUTES.RESUME} component={ResumePage} />
