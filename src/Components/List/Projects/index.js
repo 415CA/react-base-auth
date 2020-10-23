@@ -4,7 +4,7 @@ const Projects = () => (
   <section className='mw7 center avenir'>
     <h2 className='baskerville fw1 ph3 ph0-l'>Projects</h2>
     <article className='bt bb b--black-10'>
-      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://github.com/415CA/turismo-frontend'>
+      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://turismo-travel.herokuapp.com/'>
         <div className='flex flex-column flex-row-ns'>
           <div className='pr3-ns mb4 mb0-ns w-100 w-40-ns'>
             <img src='https://images.unsplash.com/photo-1597078768979-00eb86c9871a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' className='db' alt='Rome' />
@@ -23,7 +23,7 @@ const Projects = () => (
       </a>
     </article>
     <article className='bb b--black-10'>
-      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://github.com/415CA/mediatrac-frontend'>
+      <a className='db pv4 ph3 ph0-l no-underline black dim' href='https://mediatrac-app.herokuapp.com/'>
         <div className='flex flex-column flex-row-ns'>
           <div className='pr3-ns mb4 mb0-ns w-100 w-40-ns'>
             <img src='https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1564&q=80' className='db' alt='theater' />
