@@ -1,26 +1,23 @@
 import React from 'react';
+import ContactPhoto from '../../Assets/Images/Contact.jpg';
 import Social from '../../Components/Social';
 
-const Contact = () => {
-  const image = 'https://lh3.googleusercontent.com/Hi34vE4h0SvYiX0Alg88LShvetgRJ7oCW6FA3dCxrqoOLHpT-vEqcHQ9Qn0fvDRDYUXtMCKA_S6qN1GpcFBVVetfgQc4TmjFLBDb5sfl7yNLShjeGiOUAqJhXaFeh58jYcKfM7B998wQ1HwQ2A8nZ3F79nFUVnktPXpDYAdP7-1osaSuj7Ofkax-RNJ49oKxHf3mtNm-SWuEFqpIF3v_aOidVAEoGBsQRYFvIdPZerFcKYseNaIDUECfYav0W2yWA4VmaG8nZ2nv6sPAzVe7aVJpwjbmcHFw1NjCHPYkAjTaAAWX1Gix1a69dSoKLN2EgZDldoWOhcaTmrLO9M6odHagkFAuc3pWf3taVnfYIJRPlcb-D8Dm9OaZ8FRsFqt98wCxcXNny0OMdv89tQK1Vyl_15RC4bnAFOB4nE1q4WQd3p9pAGChUr0tTpSZvYSxT06Endwk4ZDW7qld-Y2IEoUxdCRtKicAA0Po99a4nXxnt1VegCRKfvonf3h4xp8dcHDj9SatcmFgr-9d0D84nNXGgCPiNqmK7EBgYSNALpuZjACHTf2EWV7jAghz0OYF1jHjkkmTd41qo9DrcuKd_D27o9BvlR6uH-0XTOKw8PoKXksaM0khNaZMfzs9vZQjmPsuO85TSzfFJjz00L0XEcwseF-Kjp1rOujFQuz984dlRtjCR3w_qqqyw8Wj2yU=w2836-h1596-no?authuser=0';
-
-  return (
-    <>
-      <div className='athelas'>
-        <div className='vh-100 dt w-100 tc bg-dark-gray white cover' style={{ background: `url(${image})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-          <div className='dtc v-mid'>
-            <header className='white'>
-              <h1 className='f2 f-headline-l fw1 i white'>Chris Allen</h1>
-            </header>
-            <Social />
-            <h3 className='f4 fw1 ttu tracked mb2 lh-title'>Full Stack Web Developer</h3>
-            <h3 className='f4 fw1 ttu tracked mb2 lh-title'>Entertainment Marketing | Media Licensing | Business Development</h3>
-            <h3 className='f4 fw1 ttu tracked mb2 lh-title'>chrisallen415@gmail.com</h3>
-          </div>
+const Contact = () => (
+  <>
+    <div className='athelas'>
+      <div className='vh-100 dt w-100 tc bg-dark-gray white cover' style={{ background: `url(${ContactPhoto})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
+        <div className='dtc v-mid'>
+          <header className='white'>
+            <h1 className='f2 f-headline-l fw1 i white'>Chris Allen</h1>
+          </header>
+          <Social color='#FFFFFF' size={50} />
+          <h3 className='f4 fw1 ttu tracked mb2 lh-title'>Full Stack Web Developer</h3>
+          <h3 className='f4 fw1 ttu tracked mb2 lh-title'>Entertainment Marketing | Media Licensing | Business Development</h3>
+          <h3 className='f4 fw1 ttu tracked mb2 lh-title'>chrisallen415@gmail.com</h3>
         </div>
       </div>
-    </>
-  );
-};
+    </div>
+  </>
+);
 
 export default Contact;
