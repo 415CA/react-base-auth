@@ -7,7 +7,7 @@ import {
 import * as ROUTES from '../../Constants/routes';
 import AboutPage from '../../Pages/About';
 import ContactPage from '../../Pages/Contact';
-import DemoReel from '../../Pages/DemoReel';
+import Campaigns from '../../Pages/DemoReel';
 import HomePage from '../../Pages/Home';
 import LandingPage from '../../Pages/Landing';
 import NoMatchPage from '../../Pages/NoMatch';
@@ -50,7 +50,7 @@ const App = () => (
         <Route exact path={ROUTES.WORK} component={WorkPage} />
         <Route exact path={ROUTES.CONTACT} component={ContactPage} />
         <Route exact path={ROUTES.RESUME} component={ResumePage} />
-        <Route exact path={ROUTES.FILM} component={DemoReel} />
+        <Route exact path={ROUTES.CAMPAIGNS} component={Campaigns} />
         <Route path='*' component={NoMatch} />
       </Switch>
       <Footer />

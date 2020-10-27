@@ -72,33 +72,33 @@ const NavigationNonAuth = () => (
           alt='Chris Allen'
         />
       </a>
-      <div className='db dtc-l v-mid w-100 w-75-l tc tr-l'>
+      <div className='db dtc-l v-mid w-100 w-75-l tc tr-l helvetica'>
         <Link
-          className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
+          className='link dim black hover-dark-gray f6 f5-l dib mr3 mr4-l'
           to={ROUTES.LANDING}
         >
           Home
         </Link>
         <Link
-          className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
+          className='link dim black hover-dark-gray f6 f5-l dib mr3 mr4-l'
           to={ROUTES.PROJECTS}
         >
           Projects
         </Link>
         <Link
-          className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
-          to={ROUTES.FILM}
+          className='link dim black hover-dark-gray f6 f5-l dib mr3 mr4-l'
+          to={ROUTES.CAMPAIGNS}
         >
-          Trailers
+          Campaigns
         </Link>
         <Link
-          className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
+          className='link dim black hover-dark-gray f6 f5-l dib mr3 mr4-l'
           to={ROUTES.RESUME}
         >
           Resume
         </Link>
         <Link
-          className='link dim dark-gray f6 f5-l dib mr3 mr4-l'
+          className='link dim black hover-dark-gray f6 f5-l dib mr3 mr4-l'
           to={ROUTES.CONTACT}
         >
           Contact

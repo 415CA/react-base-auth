@@ -10,8 +10,8 @@ const Footer = () => (
             Copyright © Chris Allen
           </p>
         </div>
-        <div className='db dtc-ns black-70 tc tr-ns v-mid'>
-          <span className='dib mr4 mr5-ns'><Social color='#000000' size={30} /></span>
+        <div className='fr'>
+          <Social color='#000000' size={30} />
         </div>
       </div>
     </footer>

@@ -12,5 +12,5 @@ export const WORK = '/work';
 export const CONTACT = '/contact';
 export const RESUME = '/resume';
 export const PORTFOLIO = '/portfolio';
-export const FILM = '/film';
+export const CAMPAIGNS = '/campaigns';
 export const PROJECTS = '/projects';
